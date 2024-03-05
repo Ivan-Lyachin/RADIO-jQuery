@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.jQuery.js"></script>
+    <title>KR</title>
+  </head>
+  <body>
+    <script>
+      if (window.jQuery) {
+        console.log("jQueryEnabled");
+      } else {
+        console.log("jQueryDisabled");
+      }
+    </script>
+    <header class="header">
+      <a href="/index.html">
+        <img
+          src="/logo.jpg"
+          style="
+            width: 100px;
+            border-radius: 70px;
+            margin-left: 200px;
+            margin-top: 30px;
+          "
+        />
+      </a>
+    </header>
+    <section>
+      <h1>Запуск радиостанций по нажатию кнопки</h1>
+    </section>
+    <section>
+      <p id="timezone"></p>
+    </section>
+    <section>
+      <form action="">
+        <label for="strana">Введите название страны:</label>
+        <input
+          type="text"
+          list="countries"
+          name="input"
+          id="strana_str"
+          placeholder="латиницей"
+        />
+        <datalist id="countries">
+          <option value="Argentina">Аргентина</option>
+          <option value="Armenia">Армения</option>
+          <option value="Belarus">Беларусь</option>
+          <option value="Belgium">Бельгия</option>
+          <option value="Brazil">Бразилия</option>
+          <option value="China">Китай</option>
+          <option value="Cuba">Куба</option>
+          <option value="Denmark">Дания</option>
+          <option value="Finland">Финляндия</option>
+          <option value="France">Франция</option>
+          <option value="Germany">Германия</option>
+          <option value="Greece">Греция</option>
+          <option value="Iceland">Исландия</option>
+          <option value="Japan">Япония</option>
+          <option value="Kazakhstan">Казахстан</option>
+          <option value="Norway">Норвегия</option>
+          <option value="Poland">Польша</option>
+          <option value="Portugal">Португалия</option>
+          <option value="Russia">Россия</option>
+          <option value="Slovenia">Словения</option>
+          <option value="Spain">Испания</option>
+          <option value="Switzerland">Швейцария</option>
+          <option value="Turkey">Турция</option>
+          <option value="United States of America">США</option>
+        </datalist>
+        <button type="button" onclick="krData()">Найти самую популярную</button>
+      </form>
+
+      <br />
+    </section>
+    <footer>
+      <p>Иван Лячин, 2024</p>
+    </footer>
+  </body>
+</html>
