@@ -1,8 +1,7 @@
-javascript;
 async function getCountryTimezone(countryCode) {
   try {
     const response = await $.getJSON(
-      `http://api.timezonedb.com/v2./list-time-zone?key=X87VM5VMQLAN&format=json&country=${countryCode}`
+      `http://api.timezonedb.com/v2.1/list-time-zone?key=X87VM5VMQLAN&format=json&country=${countryCode}`
     );
     return response.zones[0].zoneName;
   } catch (err) {
@@ -16,16 +15,15 @@ $(document).ready(function () {
     url: "https://restcountries.com/v3.1/all?fields=name",
     type: "GET",
     success: function (data) {
-      var dataList = $("#countryList");
+      var dataList = $("#countryList"); // найдем элемент datalist по id
 
-      $.each(data, function (index, country) {
+      data.forEach(function (country) {
         var countryName = country.name.common;
-        dataList.append(`<option value='${countryName}'>`);
+        dataList.append("<option value='" + countryName + "'>");
       });
     },
   });
 });
-
 async function krData() {
   try {
     const strana_str = $("#strana_str").val();

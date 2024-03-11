@@ -1,8 +1,7 @@
-javascript;
 async function getCountryTimezone(countryCode) {
   try {
     const response = await $.getJSON(
-      `http://api.timezonedb.com/v2./list-time-zone?key=X87VM5VMQLAN&format=json&country=${countryCode}`
+      `http://api.timezonedb.com/v2.1/list-time-zone?key=X87VM5VMQLAN&format=json&country=${countryCode}`
     );
     return response.zones[0].zoneName;
   } catch (err) {
@@ -10,21 +9,6 @@ async function getCountryTimezone(countryCode) {
     throw new Error("Error fetching timezone data.");
   }
 }
-
-$(document).ready(function () {
-  $.ajax({
-    url: "https://restcountries.com/v3.1/all?fields=name",
-    type: "GET",
-    success: function (data) {
-      var dataList = $("#countryList");
-
-      $.each(data, function (index, country) {
-        var countryName = country.name.common;
-        dataList.append(`<option value='${countryName}'>`);
-      });
-    },
-  });
-});
 
 async function krData() {
   try {
